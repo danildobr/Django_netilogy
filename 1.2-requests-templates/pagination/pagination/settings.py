@@ -127,6 +127,7 @@ STATICFILES_DIRS = [
 ]
 
 BUS_STATION_CSV = os.path.join(BASE_DIR, 'data-398-2018-08-30.csv')
+# BUS_STATION_CSV = '1.2-requests-templates\pagination\data-398-2018-08-30.csv'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
