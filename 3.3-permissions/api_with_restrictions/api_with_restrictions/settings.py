@@ -76,7 +76,17 @@ TEMPLATES = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-    ]
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [       
+        'rest_framework.throttling.UserRateThrottle',   # Для авторизованных
+        'rest_framework.throttling.AnonRateThrottle'    # Для анонимов
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '20/minute',# лимит для UserRateThrottle
+        'anon': '10/minute'# лимит для AnonRateThrottle
+    }
+    
+    
 }
 
 WSGI_APPLICATION = 'api_with_restrictions.wsgi.application'
@@ -91,8 +101,10 @@ DATABASES = {
         'NAME': 'netology_classified_ads',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'USER': 'postgres', 
+        'PASSWORD': ' пароль ',
+        }
     }
-}
 
 
 # Password validation
@@ -117,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
