@@ -36,13 +36,6 @@
 {% endfor %}
 ```
 
-Более подробно примеры как работать с `ManyToManyField` можно посмотреть в документации Django.
-https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#working-with-many-to-many-models
-
-## Дополнительное задание
-
-Проанализируйте число SQL-запросов. Напоминание: для этого можно использовать `django-debug-toolbar`. Для каждого студента будет выполняться отдельный запрос. Это не очень производительное решение — улучшите его с помощью `prefetch_related` ([документация](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#prefetch-related)).
-
 ## Документация по проекту
 
 Для запуска проекта необходимо
