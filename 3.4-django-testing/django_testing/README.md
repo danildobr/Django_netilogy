@@ -43,33 +43,6 @@
 $ pytest
 ```
 
-Перед началом работы убедитесь, что все зависимости установлены (dev-зависимости указаны в `requirements-dev.txt`) и тесты успешно запускаются. Вы должны увидеть:
-
-```
-$ pytest
-======== test session starts =====
-
-...
-collected 1 item
-
-tests/students/test_courses_api.py F                                                                                                                                          [100%]
-
-====== FAILURES ====
-_____ test_example ____
-
-    def test_example():
->       assert False, "Just test example"
-E       AssertionError: Just test example
-E       assert False
-
-tests/students/test_courses_api.py:2: AssertionError
-=== short test summary info ===
-FAILED tests/students/test_courses_api.py::test_example - AssertionError: Just test example
-===== 1 failed in 0.21s =====
-```
-
-Этот тест можете удалить и написать в этом файле свои тесты.
-
 ## Подсказки
 
 - `APIClient` в DRF является расширением Джанговского `Client`. Для того, чтобы передать GET-параметры в запросе, используйте аргумент `data`: https://docs.djangoproject.com/en/3.1/topics/testing/tools/#django.test.Client.get.
@@ -81,16 +54,6 @@ pytest: https://docs.pytest.org/en/stable/
 pytest-django: https://pytest-django.readthedocs.io/en/latest/
 
 тестирование DRF: https://www.django-rest-framework.org/api-guide/testing/
-
-## Дополнительные задания (необязательные для выполнения)
-
-### Ограничить число студентов на курсе
-
-Добавьте валидацию на максимальное число студентов на курсе — 20. Подумайте, как протестировать это ограничение, не создавая 20 сущностей в базе данных.
-
-**Подсказка:** задайте максимальное число студентов в `settings.py`: `MAX_STUDENTS_PER_COURSE`. В тестах используйте `parametrize` и фикстуру `settings` (https://pytest-django.readthedocs.io/en/latest/helpers.html#settings), чтобы переопределить параметр.
-
-Протестируйте как неудачный исход, так и успешный.
 
 ## Документация по проекту
 
